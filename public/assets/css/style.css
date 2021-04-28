@@ -66,6 +66,11 @@ html,body{
     font-size: 100px;
     margin-left: 50px;
   }
+  .titleOfMovie{
+      color: white;
+    font-family: coolvetica, sans-serif; 
+    font-size: 22px;
+  }
   
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
