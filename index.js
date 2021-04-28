@@ -24,8 +24,20 @@ app.get('/', async function (req, res) {
     })
  })
 
- app.use(express.static('public'))
+app.get('/film', async function (req, res) {
+  let film = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=2')
+  .then(res=> res.json())
+  .then(data => {return data})
+  console.log(film);
+res.render('main1' , {
+    layout : 'index' , 
+    results:{
+        film:film
+      }
+  })
+})
 
+app.use(express.static('public'))
 
 app.listen(8080 , function(){
   console.log('c\'est ok !')

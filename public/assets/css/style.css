@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'montserrat';
+    src: url('../font/Montserrat/Montserrat-Regular.ttf') ;
+
+  }
+
+  @font-face {
+    font-family: 'montserratBlack';
+    src: url('../font/Montserrat/Montserrat-SemiBold.ttf') ;
+
+  }
+
+body {
+    background-color: #1D1D1B;
+    font-family: 'montserrat';
+    color : #fff
+}
+
+.logo {
+    width: 90px;
+    margin-top: 40px;
+}
+
+.backgroundImg{
+    background-image: url(../img/film.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 300px;  
+}
+
+.film {
+    margin-top: -200px;
+}
+
+h1 {
+    color: #fff;
+    margin-left: 275px;
+}
+
+.row {
+    text-align: center;
+    margin-right: 250px;
+    margin-left: 250px;
+}
+
+.green {
+    font-family: 'montserratBlack';
+    font-weight: 500;
+    color :#45E6B0
+
+}
+
+.onbackground{
+    margin-left: 5%;
+    margin-top: -10%;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    background-image: url(../img/pop.jpg);
+    background-size: cover;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align:center;
+    font-family: coolvetica, sans-serif;
+  }
+  
+  .sidenav a {
+    padding: 60px 60px 60px 50px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+    font-size: 45px;
+  
+  }
+  
+  .sidenav a:hover{
+    color: #45E6B0;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 100px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}

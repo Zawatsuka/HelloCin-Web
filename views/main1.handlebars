@@ -1,0 +1,25 @@
+ 
+
+<div class="backgroundImg">
+    <a href="#" onclick="openNav()" class="p-5"><img class="burger" src="./assets/img/burger.png" alt=""></a>
+
+    <img class="logo"src="./assets/img/logo2.png" alt="">
+</div>
+<div class="container-fluid film">
+   
+    <H1>Notre catalogue de <span class="green">films</span></H1>
+
+    <div class="row">
+        
+        {{#each results.film.results}}
+        <div class="col-3">
+            <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200" class="img-fluid"
+                alt="{{this.title}}">
+            <p>{{this.title}}</p>
+             <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <img src="" alt=""> 
+            </a>
+        </div>
+        {{/each}}
+    </div>
+</div>
