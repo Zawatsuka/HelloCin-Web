@@ -71,6 +71,9 @@ html,body{
     font-family: coolvetica, sans-serif; 
     font-size: 22px;
   }
+  .colorOfTitle{
+      color: #45E6B0;
+  }
   
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
