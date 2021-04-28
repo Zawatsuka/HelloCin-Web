@@ -1,0 +1,73 @@
+@import url("https://use.typekit.net/tbb4glg.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+html,body{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1D1D1B;
+    font-family: 'Montserrat', sans-serif;
+}
+.backgroundImg{
+    background-image: url(../img/accueil.jpg);
+    background-size: 100%;
+    width: 100%;
+    padding-top: 30%;
+    background-position: center;
+
+}
+.logo{
+    margin-top: -50%;
+}
+.burger{
+    margin-top: -55%;
+}
+.onbackground{
+    margin-top: -10%;
+    margin-right: 15%;
+    margin-left: 15%;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    background-image: url(../img/pop.jpg);
+    background-size: cover;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align:center;
+    font-family: coolvetica, sans-serif;
+  }
+  
+  .sidenav a {
+    padding: 60px 60px 60px 50px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+    font-size: 45px;
+  
+  }
+  
+  .sidenav a:hover{
+    color: #45E6B0;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 100px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
