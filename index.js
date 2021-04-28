@@ -12,9 +12,19 @@ app.engine('handlebars', handlebars({
 }))
 
 app.get('/', async function (req, res) {
-    let film = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=2')
+    let film = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=3')
+    let series = await fetch('https://api.themoviedb.org/3/tv/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=2')
     .then(res=> res.json())
-    .then(data => {return data})
+    .then(data => {
+      let array= []
+      data.results.map((item,index)=>{
+        if(index<8){
+          array.push(item)
+        }
+      })
+        
+      return array
+    })
     console.log(film);
   res.render('main' , {
       layout : 'index' , 
