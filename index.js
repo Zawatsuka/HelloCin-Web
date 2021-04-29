@@ -53,10 +53,18 @@ app.get('/', async function (req, res) {
     .then(data => {
       return data
     })
-    console.log(movieDetail);
+    let video = movieDetail.videos.results
+    let array= []
+      video.map((item,index)=>{
+        if(index<1){
+          array.push(item)
+        }
+        return array
+      })
   res.render('movieDetail' , {
       layout : 'index' ,
-       movieDetail:movieDetail
+       movieDetail:movieDetail,
+       video:array
     })
  })
 
