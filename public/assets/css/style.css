@@ -8,14 +8,45 @@ html,body{
     font-family: 'Montserrat', sans-serif;
     color: white;
 }
+
+/* NavBar background adrien*/
 .backgroundImg{
     background-image: url(../img/accueil.jpg);
     background-size: 100%;
     width: 100%;
     padding-top: 30%;
     background-position: center;
+}
+
+/* Position du logo et du burger adrien*/
+
+.logo{
+    margin-top: -50%;
+}
+
+.burger{
+    margin-top: -55%;
+}
+
+/* position du titre */
+
+h2 {
+  margin-left: 17%;
+}
+
+/* position des affiche de film adrien*/
+
+.onbackgroundAL{
+    margin-top: -13%;
+    
+  }
+
+.al {
+  padding-left: 17%;
+  padding-right: 17%;
 
 }
+
 .logo{
     margin-top: -52.5%;
 }
@@ -28,7 +59,7 @@ html,body{
 .marginSpace{
   padding-top: 15%;
 }
-
+/* Barre de Nav Adrien */
 .sidenav {
     height: 100%;
     width: 0;
@@ -67,6 +98,7 @@ html,body{
     font-size: 100px;
     margin-left: 50px;
   }
+
   .titleOfMovie{
     color: white;
     font-family: coolvetica, sans-serif; 
@@ -90,6 +122,7 @@ html,body{
   color: #ffffff;
   font-size: 40px;
   padding: 0px !important;
+  margin: 0px;
 }
 
 .series>span{
@@ -124,3 +157,11 @@ html,body{
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+
+/* Responsive */
+
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }

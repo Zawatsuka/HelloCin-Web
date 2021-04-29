@@ -77,6 +77,21 @@ res.render('pageSeries' , {
   })
 })
 
+ app.get('/movieDetail/:id', async function (req, res){
+  let id = req.params.id;
+  console.log(id);
+  let movieDetail = await fetch('https://api.themoviedb.org/3/movie/'+ id +'?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&append_to_response=videos')
+    .then(res=> res.json())
+    .then(data => {
+      return data
+    })
+    console.log(movieDetail);
+  res.render('movieDetail' , {
+      layout : 'index' ,
+       movieDetail:movieDetail
+    })
+ })
+
 app.use(express.static('public'))
 
 app.listen(port, () => {
