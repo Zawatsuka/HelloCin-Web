@@ -1,59 +1,52 @@
-@font-face {
-    font-family: 'montserrat';
-    src: url('../font/Montserrat/Montserrat-Regular.ttf') ;
-
-  }
-
-  @font-face {
-    font-family: 'montserratBlack';
-    src: url('../font/Montserrat/Montserrat-SemiBold.ttf') ;
-
-  }
-
-body {
+@import url("https://use.typekit.net/tbb4glg.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+html,body{
+    margin: 0;
+    width: 100%;
+    height: 100%;
     background-color: #1D1D1B;
-    font-family: 'montserrat';
-    color : #fff
+    font-family: 'Montserrat', sans-serif;
+    color: white;
 }
 
-.logo {
-    width: 90px;
-    margin-top: 40px;
-}
+/* NavBar background */
 
 .backgroundImg{
-    background-image: url(../img/film.jpg);
-    background-size: cover;
+    background-image: url(../img/accueil.jpg);
+    background-size: 100%;
+    width: 100%;
+    padding-top: 30%;
     background-position: center;
-    padding-bottom: 300px;  
 }
 
-.film {
-    margin-top: -200px;
+/* Position du logo et du burger */
+
+.logo{
+    margin-top: -50%;
 }
 
-h1 {
-    color: #fff;
-    margin-left: 275px;
+.burger{
+    margin-top: -55%;
 }
 
-.row {
-    text-align: center;
-    margin-right: 250px;
-    margin-left: 250px;
+/* position du titre */
+
+h2 {
+  margin-left: 17%;
 }
 
-.green {
-    font-family: 'montserratBlack';
-    font-weight: 500;
-    color :#45E6B0
-
-}
+/* position des affiche de film */
 
 .onbackground{
-    margin-left: 5%;
-    margin-top: -10%;
+    margin-top: -13%;
 }
+
+.row{
+  padding-left: 17%;
+  padding-right: 17%;
+}
+
+/* Barre de Nav */
 
 .sidenav {
     height: 100%;
@@ -94,7 +87,24 @@ h1 {
     font-size: 100px;
     margin-left: 50px;
   }
-  
+
+  .titleOfMovie{
+      color: white;
+    font-family: coolvetica, sans-serif; 
+    font-size: 22px;
+  }
+
+  .colorOfTitle{
+      color: #45E6B0;
+  }
+
+  .centerText{
+    margin-left: 16%;
+  }
+
+/* Responsive */
+
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+  }

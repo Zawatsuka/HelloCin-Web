@@ -24,18 +24,22 @@ app.get('/', async function (req, res) {
     })
  })
 
+// Partie film Adrien
+
 app.get('/film', async function (req, res) {
-  let film = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=2')
+  let film = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=1')
   .then(res=> res.json())
   .then(data => {return data})
   console.log(film);
-res.render('main1' , {
+res.render('film' , {
     layout : 'index' , 
     results:{
         film:film
       }
   })
 })
+
+// fin partie film Adrien
 
 app.use(express.static('public'))
 
