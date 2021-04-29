@@ -49,7 +49,7 @@ app.get('/', async function (req, res) {
  app.get('/movieDetail/:id', async function (req, res){
   let id = req.params.id;
   console.log(id);
-  let movieDetail = await fetch('https://api.themoviedb.org/3/movie/'+ id +'?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR')
+  let movieDetail = await fetch('https://api.themoviedb.org/3/movie/'+ id +'?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&append_to_response=videos')
     .then(res=> res.json())
     .then(data => {
       return data
@@ -58,6 +58,21 @@ app.get('/', async function (req, res) {
   res.render('movieDetail' , {
       layout : 'index' ,
        movieDetail:movieDetail
+    })
+ })
+
+ app.get('/serieDetail/:id', async function (req, res){
+  let id = req.params.id;
+  console.log(id);
+  let serieDetail = await fetch('https://api.themoviedb.org/3/tv/'+ id +'?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&append_to_response=videos')
+    .then(res=> res.json())
+    .then(data => {
+      return data
+    })
+    console.log(serieDetail);
+  res.render('serieDetail' , {
+      layout : 'index' ,
+       serieDetail:serieDetail
     })
  })
 

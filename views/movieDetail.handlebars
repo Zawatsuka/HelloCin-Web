@@ -1,8 +1,12 @@
-{{movieDetail.title}}
-<div class="container">
+<div class="container p-3">
     <div class="row">
-        <div class="col-12">
-            <img src="" alt="">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+            <img src="https://image.tmdb.org/t/p/original/{{movieDetail.poster_path}}" width="350"
+                    class="img-fluid viewDescription" alt="{{movieDetail.title}}">
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+            <h2>{{movieDetail.title}}</h2>
+            <p>{{movieDetail.overview}}</p>
         </div>
     </div>
 </div>
