@@ -1,15 +1,30 @@
 <div class="container-fluid onbackground">
-    <h2 class="">Les plus gros succés <span class="colorsOfTitle">Films</span></h2>
-    <div class="row">
+    <h2 class="centerText">Les plus gros succés <span class="colorsOfTitle">Films</span></h2>
+    <div class="row margOnFilm">
         {{#each results.film}}
-        <div class="col-3 margOnFilm ">
-            <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200" class="img-fluid"
-                alt="{{this.title}}">
-            <p class="titleOfMovie">{{this.title}}</p>
-             <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <img src="" alt=""> 
+        <div class="col-3 mt-5">
+            <a href="/movieDetail/{{this.id}}">
+                <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200"
+                    class="img-fluid viewDescription" alt="{{this.title}}">
             </a>
         </div>
         {{/each}}
+
     </div>
+
+</div>
+<div class="container-fluid onbackground marginSpace">
+    <h2 class="centerText">Les plus gros succés <span class="colorsOfTitle">Series</span></h2>
+    <div class="row margOnFilm">
+        {{#each results.series}}
+        <div class="col-3 mt-5">
+             <a href="/movieDetail/{{this.id}}">
+            <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200"
+                class="img-fluid viewDescription" alt="{{this.title}}">
+            </a>
+            </div>
+        {{/each}}
+
+    </div>
+
 </div>

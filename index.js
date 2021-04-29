@@ -12,13 +12,24 @@ app.engine('handlebars', handlebars({
 }))
 
 app.get('/', async function (req, res) {
-    let film = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=3')
-    let series = await fetch('https://api.themoviedb.org/3/tv/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=2')
+    let film = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=1')
     .then(res=> res.json())
     .then(data => {
       let array= []
       data.results.map((item,index)=>{
-        if(index<8){
+        if(index<12){
+          array.push(item)
+        }
+      })
+        
+      return array
+    })
+    let series = await fetch('https://api.themoviedb.org/3/tv/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=1')
+    .then(res=> res.json())
+    .then(data => {
+      let array= []
+      data.results.map((item,index)=>{
+        if(index<12){
           array.push(item)
         }
       })
@@ -29,8 +40,24 @@ app.get('/', async function (req, res) {
   res.render('main' , {
       layout : 'index' , 
       results:{
-          film:film
+          film:film, 
+          series:series
         }
+    })
+ })
+
+ app.get('/movieDetail/:id', async function (req, res){
+  let id = req.params.id;
+  console.log(id);
+  let movieDetail = await fetch('https://api.themoviedb.org/3/movie/'+ id +'?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR')
+    .then(res=> res.json())
+    .then(data => {
+      return data
+    })
+    console.log(movieDetail);
+  res.render('movieDetail' , {
+      layout : 'index' ,
+       movieDetail:movieDetail
     })
  })
 
