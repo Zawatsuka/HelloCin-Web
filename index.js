@@ -15,18 +15,53 @@ app.engine('handlebars', handlebars({
 }))
 
 // PAGE FILMS - API
-app.get('/', async function (req, res) {
+app.get('/film', async function (req, res) {
   let film = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=2')
   .then(res=> res.json())
   .then(data => {return data})
   console.log(film);
-res.render('main' , {
+res.render('film' , {
     layout : 'index' , 
     results:{
         film:film
       }
   })
 })
+
+// PAGE ACCUEIL
+app.get('/', async function (req, res) {
+    let filmAccueil = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=1')
+    .then(res=> res.json())
+    .then(data => {
+      let array= []
+      data.results.map((item,index)=>{
+        if(index<12){
+          array.push(item)
+        }
+      })
+        
+      return array
+    })
+    let seriesAccueil = await fetch('https://api.themoviedb.org/3/tv/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=1')
+    .then(res=> res.json())
+    .then(data => {
+      let array= []
+      data.results.map((item,index)=>{
+        if(index<12){
+          array.push(item)
+        }
+      })
+
+      return array
+    })
+  res.render('main' , {
+      layout : 'index' , 
+      results:{
+          filmAccueil:filmAccueil, 
+          seriesAccueil:seriesAccueil
+        }
+    })
+  })
 
 // PAGE SERIES - API
 app.get('/pageSeries', async function (req, res) {
