@@ -19,7 +19,7 @@ html,body{
 }
 
 /* Position du logo et du burger adrien*/
-
+/* .logoNav{} */
 .logo{
     margin-top: -50%;
 }
@@ -30,8 +30,9 @@ html,body{
 
 /* position du titre */
 
-h2 {
+#titreAL {
   margin-left: 17%;
+  font-size: 40px;
 }
 
 /* position des affiche de film adrien*/
@@ -104,15 +105,14 @@ h2 {
     font-family: coolvetica, sans-serif; 
     font-size: 22px;
   }
-  .colorsOfTitleLT{
-    color: #45E6B0;
-  }
+ 
   .colorOfTitleAL{
       color: #45E6B0;
+      font-weight: bold;
   }
-
   .colorsOfTitle{
       color: #45E6B0;
+      font-weight: bold;
   }
   .margOnFilmLT{
       margin-left: 15%;
@@ -131,6 +131,7 @@ h2 {
 }
 .centerText{
   margin-left: 16%;
+  font-size: 40px;
 }
 
 /* Page SERIES */
@@ -152,12 +153,16 @@ h2 {
   padding-right: 15%;
   margin-top: -15%;
 }
+.poster{
+  transition: transform .2s;
+}
 
 .poster:hover{
-  -webkit-transform: scale(1.1);
+  /* -webkit-transform: scale(1.1);
 	transform: scale(1.1);
-  -webkit-transition: .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  -webkit-transition: .2s ease-in-out;
+  transition: all .2s ease-in-out; */
+  transform: scale(1.2);
 }
 
 /* FOOTER */

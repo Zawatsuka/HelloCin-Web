@@ -92,6 +92,8 @@ app.get('/movieDetail/:id', async function (req, res){
     })
  })
 
+
+
  app.get('/serieDetail/:id', async function (req, res){
   let id = req.params.id;
   console.log(id);
@@ -106,6 +108,8 @@ app.get('/movieDetail/:id', async function (req, res){
        serieDetail:serieDetail
     })
  })
+
+
 
 app.use(express.static('public'))
 

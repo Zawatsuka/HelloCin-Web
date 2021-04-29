@@ -5,7 +5,7 @@
                     class="img-fluid viewDescription" alt="{{movieDetail.title}}">
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-            <h2>{{movieDetail.title}}</h2>
+            <h2 class="colorsOfTitle">{{movieDetail.title}}</h2>
             <p>{{movieDetail.overview}}</p>
             {{#each video}}
             <iframe width="560" height="315" src="https://www.youtube.com/embed/{{this.key}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
