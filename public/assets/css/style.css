@@ -22,10 +22,10 @@ html,body{
 .burger{
     margin-top: -55%;
 }
-.onbackground{
+.onbackgroundLT{
     margin-top: -10%;
 }
-.marginSpace{
+.marginSpaceLT{
   padding-top: 15%;
 }
 
@@ -73,14 +73,14 @@ html,body{
     font-family: coolvetica, sans-serif; 
     font-size: 22px;
   }
-  .colorsOfTitle{
+  .colorsOfTitleLT{
       color: #45E6B0;
   }
-  .margOnFilm{
+  .margOnFilmLT{
       margin-left: 15%;
       margin-right: 15%;
   }
-  .centerText{
+  .centerTextLT{
     margin-left: 16%;
   }
 
