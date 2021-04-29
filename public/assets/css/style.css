@@ -9,7 +9,7 @@ html,body{
     color: white;
 }
 
-/* NavBar background */
+/* NavBar background adrien*/
 
 .backgroundImg{
     background-image: url(../img/accueil.jpg);
@@ -19,7 +19,7 @@ html,body{
     background-position: center;
 }
 
-/* Position du logo et du burger */
+/* Position du logo et du burger adrien*/
 
 .logo{
     margin-top: -50%;
@@ -35,19 +35,36 @@ h2 {
   margin-left: 17%;
 }
 
-/* position des affiche de film */
+/* position des affiche de film adrien*/
 
-.onbackground{
+.onbackgroundAL{
     margin-top: -13%;
-}
+    
+  }
 
-.row{
+.al {
   padding-left: 17%;
   padding-right: 17%;
+
 }
 
-/* Barre de Nav */
 
+
+
+
+.logo{
+    margin-top: -50%;
+}
+.burger{
+    margin-top: -55%;
+}
+.onbackground{
+    margin-top: -10%;
+}
+.marginSpace{
+  padding-top: 15%;
+}
+/* Barre de Nav Adrien */
 .sidenav {
     height: 100%;
     width: 0;
@@ -94,10 +111,17 @@ h2 {
     font-size: 22px;
   }
 
-  .colorOfTitle{
+  .colorOfTitleAL{
       color: #45E6B0;
   }
 
+  .colorsOfTitle{
+      color: #45E6B0;
+  }
+  .margOnFilm{
+      margin-left: 15%;
+      margin-right: 15%;
+  }
   .centerText{
     margin-left: 16%;
   }

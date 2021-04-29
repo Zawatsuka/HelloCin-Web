@@ -12,20 +12,72 @@ app.engine('handlebars', handlebars({
 }))
 
 app.get('/', async function (req, res) {
-    let film = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=2')
+    let filmAccueil = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=1')
     .then(res=> res.json())
-    .then(data => {return data})
-    console.log(film);
+    .then(data => {
+      let array= []
+      data.results.map((item,index)=>{
+        if(index<12){
+          array.push(item)
+        }
+      })
+        
+      return array
+    })
+    let seriesAccueil = await fetch('https://api.themoviedb.org/3/tv/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=1')
+    .then(res=> res.json())
+    .then(data => {
+      let array= []
+      data.results.map((item,index)=>{
+        if(index<12){
+          array.push(item)
+        }
+      })
+        
+      return array
+    })
   res.render('main' , {
       layout : 'index' , 
       results:{
-          film:film
+          filmAccueil:filmAccueil, 
+          seriesAccueil:seriesAccueil
         }
     })
  })
 
-// Partie film Adrien
 
+ app.get('/movieDetail/:id', async function (req, res){
+  let id = req.params.id;
+  console.log(id);
+  let movieDetail = await fetch('https://api.themoviedb.org/3/movie/'+ id +'?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&append_to_response=videos')
+    .then(res=> res.json())
+    .then(data => {
+      return data
+    })
+    console.log(movieDetail);
+  res.render('movieDetail' , {
+      layout : 'index' ,
+       movieDetail:movieDetail
+    })
+ })
+
+ app.get('/serieDetail/:id', async function (req, res){
+  let id = req.params.id;
+  console.log(id);
+  let serieDetail = await fetch('https://api.themoviedb.org/3/tv/'+ id +'?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&append_to_response=videos')
+    .then(res=> res.json())
+    .then(data => {
+      return data
+    })
+    console.log(serieDetail);
+  res.render('serieDetail' , {
+      layout : 'index' ,
+       serieDetail:serieDetail
+    })
+ })
+
+
+// Partie film Adrien
 app.get('/film', async function (req, res) {
   let film = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=1')
   .then(res=> res.json())
