@@ -126,6 +126,11 @@ h2 {
     margin-left: 16%;
   }
 
+  .footer {
+    text-align: center;
+    margin-top: 5%;
+  }
+
 /* Responsive */
 
   @media screen and (max-height: 450px) {
