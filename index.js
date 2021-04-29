@@ -12,7 +12,7 @@ app.engine('handlebars', handlebars({
 }))
 
 app.get('/', async function (req, res) {
-    let film = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=1')
+    let filmAccueil = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=1')
     .then(res=> res.json())
     .then(data => {
       let array= []
@@ -24,7 +24,7 @@ app.get('/', async function (req, res) {
         
       return array
     })
-    let series = await fetch('https://api.themoviedb.org/3/tv/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=1')
+    let seriesAccueil = await fetch('https://api.themoviedb.org/3/tv/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=1')
     .then(res=> res.json())
     .then(data => {
       let array= []
@@ -36,12 +36,11 @@ app.get('/', async function (req, res) {
         
       return array
     })
-    console.log(film);
   res.render('main' , {
       layout : 'index' , 
       results:{
-          film:film, 
-          series:series
+          filmAccueil:filmAccueil, 
+          seriesAccueil:seriesAccueil
         }
     })
  })

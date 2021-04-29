@@ -1,7 +1,7 @@
 <div class="container-fluid onbackground">
     <h2 class="centerText">Les plus gros succés <span class="colorsOfTitle">Films</span></h2>
     <div class="row margOnFilm">
-        {{#each results.film}}
+        {{#each results.filmAccueil}}
         <div class="col-3 mt-5">
             <a href="/movieDetail/{{this.id}}">
                 <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200"
@@ -16,7 +16,7 @@
 <div class="container-fluid onbackground marginSpace">
     <h2 class="centerText">Les plus gros succés <span class="colorsOfTitle">Series</span></h2>
     <div class="row margOnFilm">
-        {{#each results.series}}
+        {{#each results.seriesAccueil}}
         <div class="col-3 mt-5">
              <a href="/serieDetail/{{this.id}}">
             <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200"
