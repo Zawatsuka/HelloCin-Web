@@ -16,7 +16,7 @@ html,body{
 
 }
 .logo{
-    margin-top: -50%;
+    margin-top: -52.5%;
 }
 .burger{
     margin-top: -55%;
@@ -52,7 +52,6 @@ html,body{
     display: block;
     transition: 0.3s;
     font-size: 45px;
-  
   }
   
   .sidenav a:hover{
@@ -67,12 +66,48 @@ html,body{
     margin-left: 50px;
   }
   .titleOfMovie{
-      color: white;
+    color: white;
     font-family: coolvetica, sans-serif; 
     font-size: 22px;
   }
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+
+/* Page SERIES */
+.series{
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  font-size: 40px;
+  padding: 0px !important;
+}
+
+.series>span{
+  color: #45E6B0;
+  font-weight: bold;
+}
+
+.containerSeries{
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-top: -15%;
+}
+
+.poster:hover{
+  -webkit-transform: scale(1.1);
+	transform: scale(1.1);
+  -webkit-transition: .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+/* FOOTER */
+.footer{
+  text-align: center;
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1%;
+  margin-top: 4%;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

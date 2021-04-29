@@ -1,14 +1,9 @@
-<h2 class="p-5">Liste de séries à gros succès</h2>
-<div class="container-fluid">
+<div class="container-fluid containerSeries">
+    <h2 class="p-5 series">Le catalogue des <span>séries</span></h2>
     <div class="row">
         {{#each results.series.results}}
-        <div class="col-3">
-            <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200" class="img-fluid"
-                alt="{{this.title}}">
-            <p>{{this.title}}</p>
-             <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <img src="" alt=""> 
-            </a>
+        <div class="col-3 mt-5 poster">
+            <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200" class="img-fluid">
         </div>
         {{/each}}
     </div>
