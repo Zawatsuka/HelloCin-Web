@@ -5,8 +5,20 @@
                     class="img-fluid viewDescription" alt="{{serieDetail.title}}">
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-            <h2 class="colorsOfTitle">{{serieDetail.title}}</h2>
-            <p>{{serieDetail.overview}}</p>
+            <h2 class="colorsOfTitle">{{serieDetail.name}}</h2>
+            
+            <p>Date de sortie : {{serieDetail.release_date}}</p>
+            <p>Nombre de saisons : {{serieDetail.number_of_seasons}}</p>
+            <p>Genre :
+                {{#each serieDetail.genres}}
+                    {{this.name}} |
+                {{/each}}
+             </p>
+             <p>Note : {{serieDetail.vote_average}} <i class="fas fa-star "></i></p>
+
+
+            <h3>Synopsis :</h3>
+            <p class="text-justify mt-3">{{serieDetail.overview}}</p>
         </div>
     </div>
 </div>

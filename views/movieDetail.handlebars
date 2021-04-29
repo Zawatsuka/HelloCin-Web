@@ -1,4 +1,4 @@
-<div class="container p-3">
+<div class="container p-3 mt-4">
     <div class="row">
         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
             <img src="https://image.tmdb.org/t/p/original/{{movieDetail.poster_path}}" width="350"
@@ -6,9 +6,19 @@
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
             <h2 class="colorsOfTitle">{{movieDetail.title}}</h2>
-            <p>{{movieDetail.overview}}</p>
+            <p>Date de sortie : {{movieDetail.release_date}}</p>
+            <p>Genre :
+                {{#each movieDetail.genres}}
+                    {{this.name}} |
+                {{/each}}
+             </p>
+             <p>Note : {{movieDetail.vote_average}} <i class="fas fa-star "></i></p>
+
+
+            <h3>Synopsis :</h3>
+            <p class="text-justify mt-3">{{movieDetail.overview}}</p>
             {{#each video}}
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{this.key}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="modifyIframe mt-4" width="560" height="315" src="https://www.youtube.com/embed/{{this.key}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             {{/each}}
         </div>
     </div>
