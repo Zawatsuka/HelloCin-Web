@@ -6,6 +6,7 @@ html,body{
     height: 100%;
     background-color: #1D1D1B;
     font-family: 'Montserrat', sans-serif;
+    color: white;
 }
 .backgroundImg{
     background-image: url(../img/accueil.jpg);
@@ -23,8 +24,9 @@ html,body{
 }
 .onbackground{
     margin-top: -10%;
-    margin-right: 15%;
-    margin-left: 15%;
+}
+.marginSpace{
+  padding-top: 15%;
 }
 
 .sidenav {
@@ -70,6 +72,17 @@ html,body{
     font-family: coolvetica, sans-serif; 
     font-size: 22px;
   }
+
+.colorsOfTitle{
+    color: #45E6B0;
+}
+.margOnFilm{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.centerText{
+  margin-left: 16%;
+}
 
 /* Page SERIES */
 .series{
