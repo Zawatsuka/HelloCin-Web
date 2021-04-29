@@ -1,16 +1,34 @@
 const express = require('express')
 const app = express()
 
+const http = require('http');
+const hostname = '127.0.0.1';
+const port = 8000;
+
 const fetch = require('node-fetch');
 const handlebars = require('express-handlebars')
-
 app.set('view engine','handlebars')
 
 app.engine('handlebars', handlebars({
   layoutsDir: __dirname + '/views/layouts',
-  // layoutsDir: __dirname + '/views/partials',
+  partialsDir: __dirname + '/views/partials',
 }))
 
+// PAGE FILMS - API
+app.get('/film', async function (req, res) {
+  let film = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=2')
+  .then(res=> res.json())
+  .then(data => {return data})
+  console.log(film);
+res.render('film' , {
+    layout : 'index' , 
+    results:{
+        film:film
+      }
+  })
+})
+
+// PAGE ACCUEIL
 app.get('/', async function (req, res) {
     let filmAccueil = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=1')
     .then(res=> res.json())
@@ -33,7 +51,7 @@ app.get('/', async function (req, res) {
           array.push(item)
         }
       })
-        
+
       return array
     })
   res.render('main' , {
@@ -43,10 +61,23 @@ app.get('/', async function (req, res) {
           seriesAccueil:seriesAccueil
         }
     })
- })
+  })
 
+// PAGE SERIES - API
+app.get('/pageSeries', async function (req, res) {
+  let series = await fetch('https://api.themoviedb.org/3/tv/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=2')
+  .then(res=> res.json())
+  .then(data => {return data})
+  console.log(series);
+res.render('pageSeries' , {
+    layout : 'index' , 
+    results:{
+        series:series
+      }
+  })
+})
 
- app.get('/movieDetail/:id', async function (req, res){
+app.get('/movieDetail/:id', async function (req, res){
   let id = req.params.id;
   console.log(id);
   let movieDetail = await fetch('https://api.themoviedb.org/3/movie/'+ id +'?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&append_to_response=videos')
@@ -54,18 +85,10 @@ app.get('/', async function (req, res) {
     .then(data => {
       return data
     })
-    let video = movieDetail.videos.results
-    let array= []
-      video.map((item,index)=>{
-        if(index<1){
-          array.push(item)
-        }
-        return array
-      })
+    console.log(movieDetail);
   res.render('movieDetail' , {
       layout : 'index' ,
-       movieDetail:movieDetail,
-       video:array
+       movieDetail:movieDetail
     })
  })
 
@@ -84,25 +107,17 @@ app.get('/', async function (req, res) {
     })
  })
 
-
-// Partie film Adrien
-app.get('/film', async function (req, res) {
-  let film = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=1')
-  .then(res=> res.json())
-  .then(data => {return data})
-  console.log(film);
-res.render('film' , {
-    layout : 'index' , 
-    results:{
-        film:film
-      }
-  })
-})
-
-// fin partie film Adrien
-
 app.use(express.static('public'))
 
-app.listen(8080 , function(){
-  console.log('c\'est ok !')
-})
+app.listen(port, () => {
+  console.log(`Server running at http://${port}/`);
+});
+
+// MENU SIDEBAR
+function openNav() {
+  document.getElementById("mySidenav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}

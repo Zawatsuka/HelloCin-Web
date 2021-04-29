@@ -1,15 +1,16 @@
-<div class="container-fluid onbackgroundLT">
-    <h2 class="centerTextLT">Les plus gros succés <span class="colorsOfTitleLT">Films</span></h2>
-    <div class="row margOnFilmLT">
+<div class="container-fluid">
+    <div class="row onbackgroundAL">
+<div class="container-fluid onbackground">
+    <h2 class="centerText">Les plus gros succés <span class="colorsOfTitle">Films</span></h2>
+    <div class="row margOnFilm">
         {{#each results.filmAccueil}}
         <div class="col-3 mt-5">
             <a href="/movieDetail/{{this.id}}">
                 <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200"
-                    class="img-fluid viewDescriptionLT" alt="{{this.title}}">
+                    class="img-fluid viewDescriptionLT poster" alt="{{this.title}}">
             </a>
         </div>
         {{/each}}
-
     </div>
 
 </div>
@@ -20,11 +21,9 @@
         <div class="col-3 mt-5">
              <a href="/serieDetail/{{this.id}}">
             <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200"
-                class="img-fluid viewDescription" alt="{{this.title}}">
+                class="img-fluid viewDescription poster" alt="{{this.title}}">
             </a>
             </div>
         {{/each}}
-
     </div>
-
 </div>

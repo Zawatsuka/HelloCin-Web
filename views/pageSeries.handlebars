@@ -1,0 +1,12 @@
+<div class="container-fluid containerSeries">
+    <h2 class="p-5 series">Le catalogue des <span>séries</span></h2>
+    <div class="row">
+        {{#each results.series.results}}
+        <div class="col-3 mt-5 poster">
+            <a href="/serieDetail/{{this.id}}">
+            <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200" class="img-fluid">
+            </a>
+        </div>
+        {{/each}}
+    </div>
+</div>

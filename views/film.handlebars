@@ -1,5 +1,4 @@
 {{!-- Partie Adrien page film --}}
-
 <div class="container-fluid onbackgroundAL"></div>
 <H2 id="titreAL">Notre catalogue de <span class="colorOfTitleAL">films</span></H2>
 <div class="row al">
@@ -7,10 +6,9 @@
     {{#each results.film.results}}
     <div class="col-3 mt-5">
          <a href="/movieDetail/{{this.id}}">
-        <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200" class="img-fluid"
-            alt="{{this.title}}"></a>
+        <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200" class="img-fluid poster"
+            alt="{{this.title}}">
         {{!-- <p class=" titleOfMovie">{{this.title}}</p> --}}
-
         </a>
     </div>
     {{/each}}
