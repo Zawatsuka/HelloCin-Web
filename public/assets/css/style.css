@@ -9,6 +9,11 @@ html,body{
     color: white;
 }
 
+.mention {
+  text-align: center;
+  margin: 3%;
+}
+
 /* NavBar background adrien*/
 .backgroundImg{
     background-image: url(../img/accueil.jpg);
@@ -33,6 +38,7 @@ html,body{
 .fa-search{
   z-index: 0;
   color: #ffffff;
+  z-index: 0;
 }
 
 .fa-search:hover{

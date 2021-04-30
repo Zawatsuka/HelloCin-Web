@@ -173,6 +173,13 @@ app.get('/searchTv', async function (req , res) {
   })
 })
 
+// page de mention
+
+app.get('/mention', function (req, res) {
+  res.render('mention' , {layout : 'index'})
+ })
+
+
 app.use(express.static('public'))
 
 app.listen(port, () => {
