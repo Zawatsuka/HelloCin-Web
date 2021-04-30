@@ -20,11 +20,11 @@ html,body{
 
 /* Position du logo et du burger adrien*/
 
-.logo{
+/* .logo{
   max-width: 100%;
   height: auto;
   margin-top: -30%;
-}
+} */
 
 .fa-star{
   color: #45E6B0;
@@ -39,7 +39,16 @@ html,body{
 }
 
 .burger{
-    margin-top: -55%;
+  margin-top: -30%!important;
+}
+
+.fa-align-left{
+  font-size: 250%;
+  color: #ffffff;
+}
+
+.fa-align-left:hover{
+color: #45E6B0;
 }
 
 /* position du titre */
@@ -62,12 +71,12 @@ html,body{
 
 }
 
-.logo{
+/* .logo{
     margin-top: -52.5%;
 }
 .burger{
     margin-top: -55%;
-}
+} */
 .onbackgroundLT{
     margin-top: -20%;
 }
@@ -202,6 +211,13 @@ html,body{
     font-size: 55px;
   }
 
+  .fa-align-left{
+    font-size: 190%;
+  }
+  .series{
+    margin-top: 8%;
+    font-size: 25px;
+  }
   .series{
     margin-top: 8%;
     font-size: 25px;
@@ -217,7 +233,7 @@ html,body{
   }
 
   .logo{
-    width: 20%;
+    width: 30%;
  }
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
