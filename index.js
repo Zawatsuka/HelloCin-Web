@@ -144,7 +144,7 @@ app.get('/search', async function (req , res) {
 })
 
 // page de recherche film
-app.get('/search', async function (req , res) {
+app.get('/searchMovie', async function (req , res) {
   let search = req.query.search
   let searchResultsMovie = await fetch('https://api.themoviedb.org/3/search/movie?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&query='+ search)
   .then(res => res.json())
@@ -159,7 +159,7 @@ app.get('/search', async function (req , res) {
 })
 
 // page de recherche serie
-app.get('/search', async function (req , res) {
+app.get('/searchTv', async function (req , res) {
   let search = req.query.search
   let searchResultsTV = await fetch('https://api.themoviedb.org/3/search/tv?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&query='+ search)
   .then(res => res.json())
