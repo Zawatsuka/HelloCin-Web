@@ -30,7 +30,7 @@ app.get('/film', async function (req, res) {
   })
 })
 
-// PAGE ACCUEIL
+// PAGE ACCUEIL avec film et serie
 app.get('/', async function (req, res) {
   let filmAccueil = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&page=1')
     .then(res => res.json())
@@ -80,7 +80,8 @@ app.get('/pageSeries', async function (req, res) {
     }
   })
 })
-
+// 
+// page pour un film et sa vidéo
 app.get('/movieDetail/:id', async function (req, res) {
   let id = req.params.id;
   console.log(id);
@@ -111,7 +112,7 @@ app.get('/movieDetail/:id', async function (req, res) {
 })
 
 
-
+// page pour une serie 
 app.get('/serieDetail/:id', async function (req, res) {
   let id = req.params.id;
   console.log(id);
@@ -127,7 +128,50 @@ app.get('/serieDetail/:id', async function (req, res) {
   })
 })
 
+// page de recherche accueil
+app.get('/search', async function (req , res) {
+  let search = req.query.search
+  let searchResults = await fetch('https://api.themoviedb.org/3/search/multi?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&query='+ search)
+  .then(res => res.json())
+  .then(data => {
+    return data
+  })
+  console.log(searchResults);
+  res.render('search', {
+    layout: 'index',
+    searchResults:searchResults
+  })
+})
 
+// page de recherche film
+app.get('/search', async function (req , res) {
+  let search = req.query.search
+  let searchResultsMovie = await fetch('https://api.themoviedb.org/3/search/movie?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&query='+ search)
+  .then(res => res.json())
+  .then(data => {
+    return data
+  })
+  console.log(searchResultsMovie);
+  res.render('searchMovie', {
+    layout: 'index',
+    searchResultsMovie:searchResultsMovie
+  })
+})
+
+// page de recherche serie
+app.get('/search', async function (req , res) {
+  let search = req.query.search
+  let searchResultsTV = await fetch('https://api.themoviedb.org/3/search/tv?api_key=cc84c0cda5d0bb9fdfcac00232f640f5&language=fr-FR&query='+ search)
+  .then(res => res.json())
+  .then(data => {
+    return data
+  })
+  console.log(searchResultsTV);
+  res.render('searchSearch', {
+    layout: 'index',
+    searchResultsTV:searchResultsTV
+  })
+})
 
 app.use(express.static('public'))
 
