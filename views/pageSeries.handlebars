@@ -1,10 +1,26 @@
+<form action="/searchTv" method="get" class="onbackgroundLT">
+       <div class="d-flex justify-content-center">
+           <div class="col-8 col-sm-12 col-md-8 col-lg-8 search">
+               <div class="input-group mb-3">
+                   <input type="text" name="search" class="form-control rounded" placeholder="Rechercher vos films ou series !"
+                       aria-label="Recipient's username" aria-describedby="basic-addon2">
+                   <div class="input-group-append">
+                           <button class="btn" type="submit">
+                               <i class="fas fa-search"></i>
+                           </button>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </form>
 <div class="container-fluid containerSeries">
     <h2 class="p-5 series">Le catalogue des <span>séries</span></h2>
     <div class="row">
         {{#each results.series.results}}
         <div class="col-12 col-sm-12 col-md-4 col-lg-3 mt-5 poster">
             <a href="/serieDetail/{{this.id}}">
-            <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200" class="img-fluid">
+            <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200" class="img-fluid desktopPoster">
+            <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="300" class="img-fluid mobilePoster">
             </a>
         </div>
         {{/each}}

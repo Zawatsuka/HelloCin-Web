@@ -84,6 +84,7 @@ color: #45E6B0;
 .marginSpaceLT{
   padding-top: 7%;
 }
+
 /* Barre de Nav Adrien */
 .sidenav {
     height: 100%;
@@ -152,6 +153,7 @@ color: #45E6B0;
     margin-left: 15%;
     margin-right: 15%;
 }
+
 .centerText{
   margin-left: 16%;
   font-size: 40px;
@@ -174,18 +176,36 @@ color: #45E6B0;
 .containerSeries{
   padding-left: 15%;
   padding-right: 15%;
-  margin-top: -15%;
+  margin-top: 12%;
 }
-.poster{
+
+.search{ /* Barre de recherche */
+  margin-top:-3%;
+}
+
+.fa-search{ /* Couleur + hover de la loupe de recherche */
+  color: #ffffff;
+}
+
+.fa-search:hover{
+  color: #45E6B0;
+}
+
+.poster{ /* Hover - Effet de zoom sur les affiches de séries */
   transition: transform .2s;
 }
 
 .poster:hover{
-  /* -webkit-transform: scale(1.1);
-	transform: scale(1.1);
-  -webkit-transition: .2s ease-in-out;
-  transition: all .2s ease-in-out; */
   transform: scale(1.2);
+}
+
+.mobilePoster{ /* Taille des affiches sur mobile - DESACTIVÉ */
+  display: none;
+}
+
+/* PAGE DETAILS SERIE */
+.allElements{
+  margin-top: 12%;
 }
 
 /* FOOTER */
@@ -202,7 +222,6 @@ color: #45E6B0;
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 200px) and (max-width: 640px) {
-
   .logoNav{
     margin-top: 26%;
     width: 20%;
@@ -223,11 +242,55 @@ color: #45E6B0;
     margin-top: 8%;
     font-size: 25px;
   }
+
   .centerText{
     margin-top: 8%;
     font-size: 25px;
   }
 
+  .containerSeries>.row{ /* RESPONSIVE de la page SÉRIES + résultat SÉRIE */
+    margin-left: 0%;
+    margin-right: 0%;
+    text-align: center;
+  }
+
+  .containerSeries{
+    margin-top: 0%;
+  }
+
+  .series{
+    text-align: center;
+    margin-right: 10%;
+    margin-left: 10%;
+    font-size: 29px;
+  }
+
+  .desktopPoster{
+    display: none;
+  }
+
+  .mobilePoster{
+    display: block;
+  }   
+
+  .colorsOfTitle{
+    margin-top: 8%;
+  }
+
+  .search{ /* Modification de la barre de recherches */
+    margin-top:-2%;
+  }
+
+  .rounded{
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .fa-search{
+    color: #ffffff;
+  }
+  /* Fin RESPONSIVE de la page SÉRIES + résultat SÉRIE */
+  
   #titreAL {
     margin-top: 8%;
     font-size: 25px;
@@ -236,10 +299,10 @@ color: #45E6B0;
   .logo{
     width: 30%;
  }
+
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-
 
   .footer {
     text-align: center;
