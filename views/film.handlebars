@@ -1,8 +1,8 @@
 {{!-- Partie Adrien page film --}}
-<div class="container-fluid onbackgroundAL"></div>
- <form action="/search" method="get" class="onbackgroundLT">
+<div class="container-fluid containerSeries">
+    <form action="/searchMovie" method="get" class="onbackgroundLT">
        <div class="d-flex justify-content-center">
-           <div class="col-6">
+           <div class="col-8 col-sm-12 col-md-8 col-lg-8 search">
                <div class="input-group mb-3">
                    <input type="text" name="search" class="form-control rounded" placeholder="Rechercher vos films ou series !"
                        aria-label="Recipient's username" aria-describedby="basic-addon2">
@@ -15,19 +15,22 @@
            </div>
        </div>
    </form>
+   </div>
 
+<div class="margeSimpson">
+<H2 id="titreAL">Notre catalogue de <span class="colorOfTitleAL">films</span></H2>
+<div class="row al">
 
-    <H2 id="titreAL">Notre catalogue de <span class="colorOfTitleAL">films</span></H2>
-    <div class="row al">
-
-        {{#each results.film.results}}
-        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mt-5">
-            <a href="/movieDetail/{{this.id}}">
-                <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200" class="img-fluid poster"
-                    alt="{{this.title}}">
-                {{!-- <p class=" titleOfMovie">{{this.title}}</p> --}}
-            </a>
-        </div>
-        {{/each}}
+    {{#each results.film.results}}
+    <div class="col-12 col-sm-12 col-md-4 col-lg-3 mt-5">
+        <a href="/movieDetail/{{this.id}}">
+            <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200"
+                class="img-fluid desktopPoster poster">
+            <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="300"
+                class="img-fluid mobilePoster">
+            {{!-- <p class=" titleOfMovie">{{this.title}}</p> --}}
+        </a>
     </div>
+    {{/each}}
+</div>
 </div>

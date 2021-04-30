@@ -1,6 +1,7 @@
-   <form action="/search" method="get" class="onbackgroundLT">
+<div class="container-fluid containerSeries">
+    <form action="/search" method="get" class="onbackgroundLT">
        <div class="d-flex justify-content-center">
-           <div class="col-6">
+           <div class="col-8 col-sm-12 col-md-8 col-lg-8 search">
                <div class="input-group mb-3">
                    <input type="text" name="search" class="form-control rounded" placeholder="Rechercher vos films ou series !"
                        aria-label="Recipient's username" aria-describedby="basic-addon2">
@@ -13,32 +14,35 @@
            </div>
        </div>
    </form>
-   <div class="container-fluid">
+   </div>
+   <div class="container-fluid margeSimpson">
        <div class="row ">
-       <div class="container-fluid onbackground">
-           <h2 class="centerText">Les plus gros succès <span class="colorsOfTitle">Films</span></h2>
-           <div class="row margOnFilm">
-               {{#each results.filmAccueil}}
-               <div class="col-12 col-sm-12 col-md-4 col-lg-3 mt-5">
-                   <a href="/movieDetail/{{this.id}}">
-                       <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200"
-                           class="img-fluid viewDescriptionLT poster" alt="{{this.title}}">
-                   </a>
+           <div class="container-fluid onbackground">
+               <h2 class="centerText ">Les plus gros succès <span class="colorsOfTitle">Films</span></h2>
+               <div class="row margOnFilm">
+                   {{#each results.filmAccueil}}
+                   <div class="col-12 col-sm-12 col-md-4 col-lg-3 mt-5">
+                       <a href="/movieDetail/{{this.id}}">
+                           <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200"
+                               class="img-fluid desktopPoster poster ">
+                           <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="300"
+                               class="img-fluid mobilePoster ">
+                       </a>
+                   </div>
+                   {{/each}}
                </div>
-               {{/each}}
-           </div>
 
-       </div>
-       <div class="container-fluid  marginSpaceLT">
-           <h2 class="centerText">Les plus gros succès <span class="colorsOfTitle">Series</span></h2>
-           <div class="row margOnFilmLT">
-               {{#each results.seriesAccueil}}
-               <div class="col-12 col-sm-12 col-md-4 col-lg-3 mt-5">
-                   <a href="/serieDetail/{{this.id}}">
-                       <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200"
-                           class="img-fluid viewDescription poster" alt="{{this.title}}">
-                   </a>
-               </div>
-               {{/each}}
            </div>
-       </div>
+           <div class="container-fluid  marginSpaceLT">
+               <h2 class="centerText">Les plus gros succès <span class="colorsOfTitle">Series</span></h2>
+               <div class="row margOnFilmLT">
+                   {{#each results.seriesAccueil}}
+                   <div class="col-12 col-sm-12 col-md-4 col-lg-3 mt-5">
+                       <a href="/serieDetail/{{this.id}}">
+                           <img src="https://image.tmdb.org/t/p/original/{{this.poster_path}}" width="200"
+                               class="img-fluid viewDescription poster" alt="{{this.title}}">
+                       </a>
+                   </div>
+                   {{/each}}
+               </div>
+           </div>

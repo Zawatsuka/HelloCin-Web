@@ -1,4 +1,19 @@
-<div class="container p-3 mt-4">
+<form action="/searchMovie" method="get" class="onbackgroundLT">
+       <div class="d-flex justify-content-center">
+           <div class="col-8 col-sm-12 col-md-8 col-lg-8 search">
+               <div class="input-group mb-3">
+                   <input type="text" name="search" class="form-control rounded" placeholder="Rechercher vos films ou series !"
+                       aria-label="Recipient's username" aria-describedby="basic-addon2">
+                   <div class="input-group-append">
+                           <button class="btn" type="submit">
+                               <i class="fas fa-search"></i>
+                           </button>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </form>
+<div class="container p-3 homerSimpson">
     <div class="row">
         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
             <img src="https://image.tmdb.org/t/p/original/{{movieDetail.poster_path}}" width="350"
@@ -18,7 +33,13 @@
             <h3>Synopsis :</h3>
             <p class="text-justify mt-3">{{movieDetail.overview}}</p>
             {{#each video}}
-            <iframe class="modifyIframe mt-4" width="560" height="315" src="https://www.youtube.com/embed/{{this.key}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="d-none d-sm-none d-md-block d-lg-block">
+                 <iframe class="modifyIframe mt-4" width="560" height="315" src="https://www.youtube.com/embed/{{this.key}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+             <div class="d-block d-sm-block d-md-none d-lg-none">
+                 <iframe class="modifyIframe mt-4" width="350" height="220" src="https://www.youtube.com/embed/{{this.key}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+           
             {{/each}}
         </div>
     </div>

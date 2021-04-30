@@ -1,3 +1,8 @@
+*{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  }
 @import url("https://use.typekit.net/tbb4glg.css");
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
 html,body{
@@ -9,9 +14,27 @@ html,body{
     color: white;
 }
 
-.mention {
+
+.homerSimpson{
+  margin-top: 17%!important;
+}
+
+.margeSimpson {
+  margin-top: 3%!important;
+}
+
+.mention a {
+  color: #ffffff;
   text-align: center;
   margin: 3%;
+}
+
+.mention a {
+  color: #ffffff;
+}
+
+.mention a:hover {
+  color: #ffffff;
 }
 
 /* NavBar background adrien*/
@@ -68,9 +91,10 @@ color: #45E6B0;
 /* position des affiche de film adrien*/
 
 .onbackgroundAL{
-    margin-top: -13%;
+    margin-top: -5% !important;
     
   }
+
 
 .al {
   padding-left: 17%;
@@ -85,7 +109,7 @@ color: #45E6B0;
     margin-top: -55%;
 } */
 .onbackgroundLT{
-    margin-top: -20%;
+    margin-top: -20%!important;
 }
 .marginSpaceLT{
   padding-top: 7%;
@@ -149,7 +173,7 @@ color: #45E6B0;
       margin-right: 15%;
   }
   .centerTextLT{
-    margin-left: 16%;
+    margin-left: 20%;
   }
 
 .colorsOfTitle{
@@ -163,6 +187,10 @@ color: #45E6B0;
 .centerText{
   margin-left: 16%;
   font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  font-size: 40px;
+  
 }
 
 /* Page SERIES */
@@ -182,12 +210,12 @@ color: #45E6B0;
 .containerSeries{
   padding-left: 15%;
   padding-right: 15%;
-  margin-top: 12%;
+  margin-top: -15%;
 }
 
-.search{ /* Barre de recherche */
-  margin-top:-3%;
-}
+/* .search{
+  margin-top:22% !important; 
+} */
 
 .fa-search{ /* Couleur + hover de la loupe de recherche */
   color: #ffffff;
@@ -209,10 +237,6 @@ color: #45E6B0;
   display: none;
 }
 
-/* PAGE DETAILS SERIE */
-.allElements{
-  margin-top: 12%;
-}
 
 /* FOOTER */
 .footer{
@@ -241,8 +265,8 @@ color: #45E6B0;
     font-size: 190%;
   }
   .series{
-    margin-top: 8%;
-    font-size: 25px;
+    margin-top: 20%!important;
+    font-size: 20px;
   }
   .series{
     margin-top: 8%;
@@ -251,7 +275,7 @@ color: #45E6B0;
 
   .centerText{
     margin-top: 8%;
-    font-size: 25px;
+    font-size: 30px;
   }
 
   .containerSeries>.row{ /* RESPONSIVE de la page SÉRIES + résultat SÉRIE */
@@ -261,7 +285,7 @@ color: #45E6B0;
   }
 
   .containerSeries{
-    margin-top: 0%;
+    padding-top: 15%;
   }
 
   .series{
@@ -284,7 +308,7 @@ color: #45E6B0;
   }
 
   .search{ /* Modification de la barre de recherches */
-    margin-top:-2%;
+    margin-top:-22%;
   }
 
   .rounded{
